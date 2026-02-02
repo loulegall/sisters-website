@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Découvre toutes les raisons pour lesquelles tu es incroyable">
+    <meta name="theme-color" content="#ff9a9e">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Tu es incroyable - Espace Feel Good</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <div class="nav-container">
+            <a href="../index.html" class="logo" aria-label="Retour à l'accueil">Feel Good</a>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="../index.html" data-page="feel-good" class="nav-link" role="menuitem">Feel Good</a></li>
+                <li role="none"><a href="incroyable.html" data-page="incroyable" class="nav-link active" role="menuitem" aria-current="page">Tu es incroyable</a></li>
+                <li role="none"><a href="predictions.html" data-page="predictions" class="nav-link" role="menuitem">Prédictions</a></li>
+                <li role="none"><a href="photo.html" data-page="photo" class="nav-link" role="menuitem">Photo du jour</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content" role="main">
+        <div class="container">
+            <h1 class="page-title">Pourquoi tu es incroyable</h1>
+            <p class="page-subtitle">Parce qu'il n'y a jamais assez de raisons</p>
+            <button id="raison-btn" class="action-btn" aria-label="Afficher une nouvelle raison">Encore une raison</button>
+            <div id="raison-counter" class="counter" aria-live="polite">Raisons découvertes : <span id="counter-value">0</span></div>
+            <div id="raison-message" class="message-box" style="display: none;" role="status" aria-live="polite" aria-atomic="true"></div>
+        </div>
+    </main>
+
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/incroyable.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Messages positifs et feel-good pour booster ta journée">
+    <meta name="theme-color" content="#ff9a9e">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Feel Good - Espace Feel Good</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <div class="nav-container">
+            <a href="../index.html" class="logo" aria-label="Retour à l'accueil">Feel Good</a>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="../index.html" data-page="feel-good" class="nav-link active" role="menuitem" aria-current="page">Feel Good</a></li>
+                <li role="none"><a href="incroyable.html" data-page="incroyable" class="nav-link" role="menuitem">Tu es incroyable</a></li>
+                <li role="none"><a href="predictions.html" data-page="predictions" class="nav-link" role="menuitem">Prédictions</a></li>
+                <li role="none"><a href="photo.html" data-page="photo" class="nav-link" role="menuitem">Photo du jour</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content" role="main">
+        <div class="container">
+            <h1 class="page-title">Bienvenue sur ton espace feel good</h1>
+            <p class="page-subtitle">Parce que tu mérites un petit boost de positivité</p>
+            <button id="boost-btn" class="action-btn" aria-label="Afficher un message positif">J'ai besoin d'un boost</button>
+            <div id="boost-message" class="message-box" style="display: none;" role="status" aria-live="polite" aria-atomic="true"></div>
+        </div>
+    </main>
+
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/feel-good.js"></script>
+</body>
+</html>

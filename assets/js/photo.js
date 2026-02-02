@@ -1,0 +1,137 @@
+// Script pour la page Photo du jour
+// Données intégrées pour éviter les problèmes CORS
+const imagesFeelGood = [
+    "179c53a3-17f9-47f0-9c58-ce077ae816d5.jpg",
+    "17aad80d-29d5-4b21-ab44-b1d3c2d89350.jpg",
+    "2635C60A-E887-4FFF-BB34-A23D1A3AED10_1_105_c.jpeg",
+    "34077DAB-1A9A-4A03-A438-C27A2176D22E_1_105_c.jpeg",
+    "38d07463-d28e-4566-a051-d8dc675f0b39.jpg",
+    "426015A7-FA6F-423F-A150-BFC82419F0FB.jpg",
+    "55581BDB-7B37-49F1-B44F-80FE49670290.jpg",
+    "64675778608__08742E7E-7AAF-421A-9C04-1322150E0F8F.jpeg",
+    "68d00503-14d9-427c-8ad0-6c48654c316f.jpg",
+    "705bc17c-8ee9-46fa-b0b3-77ba498ec37f.jpg",
+    "720a15be-4752-49a8-98e8-fb6735a0aeb1.jpg",
+    "DSC01489.JPG",
+    "DSCN0855.JPG",
+    "F02BC4B4-F9E5-4FAE-AEBE-BD2E30F68B94.JPG",
+    "FullSizeRender.jpg",
+    "GOPR2001.JPG",
+    "IMG_0317.jpeg",
+    "IMG_0334.jpeg",
+    "IMG_0343.jpeg",
+    "IMG_0414.jpeg",
+    "IMG_0451.jpeg",
+    "IMG_0483.jpeg",
+    "IMG_0497.jpeg",
+    "IMG_0528.jpeg",
+    "IMG_0699.jpeg",
+    "IMG_0705.jpeg",
+    "IMG_0861.jpeg",
+    "IMG_1487.JPG",
+    "IMG_1702.jpeg",
+    "IMG_1804.JPG",
+    "IMG_1810.JPG",
+    "IMG_2345.jpeg",
+    "IMG_2856.JPG",
+    "IMG_3017.JPG",
+    "IMG_3026.JPG",
+    "IMG_3038.JPG",
+    "IMG_3046.JPG",
+    "IMG_3087.JPG",
+    "IMG_3242.JPG",
+    "IMG_3245.JPG",
+    "IMG_3261.JPG",
+    "IMG_3304.JPG",
+    "IMG_3319.JPG",
+    "IMG_3444.jpeg",
+    "IMG_3756.JPG",
+    "IMG_4053.JPG",
+    "IMG_4075.JPG",
+    "IMG_4091.JPG",
+    "IMG_5031.jpeg",
+    "IMG_5050.jpeg",
+    "IMG_5289.JPG",
+    "IMG_5290.JPG",
+    "IMG_5302.JPG",
+    "IMG_5341.JPG",
+    "IMG_5602.jpeg",
+    "IMG_5631.jpeg",
+    "IMG_5650.jpeg",
+    "IMG_5685.jpeg",
+    "IMG_5728.jpeg",
+    "IMG_7737.jpg",
+    "IMG_7818.JPG",
+    "IMG_7829.JPG",
+    "IMG_7919.JPG",
+    "IMG_9065.JPG",
+    "IMG_9089.JPG",
+    "IMG_9109.jpeg",
+    "IMG_9221.JPG",
+    "IMG_9766.jpeg",
+    "af697bd7-f7dd-4da1-875c-412688b9cbfb 2.jpg",
+    "af697bd7-f7dd-4da1-875c-412688b9cbfb.jpg",
+    "b10b0072-3340-4b14-b456-d91147524a2b.jpg",
+    "e02563c0-8565-4bb1-b806-cd51baba540e.jpg",
+    "f4a11c03-4828-47f8-a071-ef15c4befc43.jpg"
+];
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dailyPhoto = document.getElementById('daily-photo');
+    const refreshPhotoBtn = document.getElementById('refresh-photo-btn');
+    let currentImageIndex = -1;
+
+    // Vérifier que les éléments existent
+    if (!dailyPhoto || !refreshPhotoBtn) {
+        console.error('Éléments DOM non trouvés');
+        return;
+    }
+
+    // Charger une image aléatoire (différente de la précédente si possible)
+    function loadRandomPhoto() {
+        if (imagesFeelGood.length === 0) {
+            console.error('Aucune image disponible');
+            return;
+        }
+        
+        // Si on a plusieurs images, éviter de réafficher la même
+        let newIndex;
+        if (imagesFeelGood.length > 1) {
+            do {
+                newIndex = Math.floor(Math.random() * imagesFeelGood.length);
+            } while (newIndex === currentImageIndex && imagesFeelGood.length > 1);
+        } else {
+            newIndex = 0;
+        }
+        
+        currentImageIndex = newIndex;
+        const randomImage = imagesFeelGood[newIndex];
+        const imagesPath = getImagesPath();
+        
+        // Ajouter un timestamp pour forcer le rechargement de l'image
+        const timestamp = new Date().getTime();
+        dailyPhoto.src = imagesPath + randomImage + '?t=' + timestamp;
+        dailyPhoto.alt = "Photo feel-good du jour";
+        
+        // Gérer les erreurs de chargement d'image
+        dailyPhoto.onerror = function() {
+            console.error('Erreur lors du chargement de l\'image:', randomImage);
+            // Essayer une autre image en cas d'erreur
+            if (imagesFeelGood.length > 1) {
+                setTimeout(() => {
+                    currentImageIndex = -1; // Réinitialiser pour permettre n'importe quelle image
+                    loadRandomPhoto();
+                }, 100);
+            }
+        };
+    }
+
+    // Rafraîchir la photo au clic sur le bouton
+    refreshPhotoBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        loadRandomPhoto();
+    });
+
+    // Charger une image aléatoire au chargement de la page
+    loadRandomPhoto();
+});

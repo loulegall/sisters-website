@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Une photo feel-good du jour pour égayer ta journée">
+    <meta name="theme-color" content="#ff9a9e">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Photo du jour - Espace Feel Good</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <div class="nav-container">
+            <a href="../index.html" class="logo" aria-label="Retour à l'accueil">Feel Good</a>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="../index.html" data-page="feel-good" class="nav-link" role="menuitem">Feel Good</a></li>
+                <li role="none"><a href="incroyable.html" data-page="incroyable" class="nav-link" role="menuitem">Tu es incroyable</a></li>
+                <li role="none"><a href="predictions.html" data-page="predictions" class="nav-link" role="menuitem">Prédictions</a></li>
+                <li role="none"><a href="photo.html" data-page="photo" class="nav-link active" role="menuitem" aria-current="page">Photo du jour</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content" role="main">
+        <div class="container">
+            <h1 class="page-title">Photo du jour</h1>
+            <p class="page-subtitle">Une petite dose de bonheur visuel</p>
+            <div id="photo-container" class="photo-container">
+                <img id="daily-photo" src="" alt="Photo feel-good du jour" class="daily-photo" loading="lazy">
+            </div>
+            <button id="refresh-photo-btn" class="action-btn" aria-label="Charger une nouvelle photo">Nouvelle photo</button>
+        </div>
+    </main>
+
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/photo.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+// Script pour la page Feel Good
+// Données intégrées pour éviter les problèmes CORS
+const messagesFeelGood = [
+    "Tu es une personne merveilleuse et tu mérites tout le bonheur du monde !",
+    "Aujourd'hui est un nouveau jour rempli de possibilités incroyables.",
+    "Tu as déjà surmonté tant de défis, tu es plus forte que tu ne le penses.",
+    "Prends un moment pour respirer et apprécier la beauté qui t'entoure.",
+    "Chaque petit pas compte, et tu avances à ton propre rythme.",
+    "Tu es entourée de personnes qui t'aiment et qui croient en toi.",
+    "N'oublie jamais : tu es unique et irremplaçable.",
+    "Les difficultés d'aujourd'hui sont les forces de demain.",
+    "Tu as le pouvoir de créer ta propre joie, chaque jour.",
+    "Souviens-toi de toutes les fois où tu as réussi, même les petites victoires comptent.",
+    "Le soleil brille toujours quelque part, même après la pluie.",
+    "Tu es courageuse, même quand tu ne le sens pas.",
+    "Prends soin de toi, tu es importante.",
+    "Chaque jour est une nouvelle chance de recommencer.",
+    "Tu es sur la bonne voie, continue comme ça !"
+];
+
+document.addEventListener('DOMContentLoaded', function() {
+    const boostBtn = document.getElementById('boost-btn');
+    const boostMessage = document.getElementById('boost-message');
+
+    if (!boostBtn || !boostMessage) {
+        return;
+    }
+
+    // Afficher un message aléatoire
+    boostBtn.addEventListener('click', function() {
+        const randomMessage = messagesFeelGood[Math.floor(Math.random() * messagesFeelGood.length)];
+        boostMessage.textContent = randomMessage;
+        boostMessage.style.display = 'flex';
+    });
+});
