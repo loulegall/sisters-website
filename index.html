@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="description" content="Espace feel-good avec messages positifs, raisons d'être incroyable, prédictions et photos du jour">
+    <meta name="description" content="Espace feel-good créé avec amour pour ma sœur">
     <meta name="theme-color" content="#ff9a9e">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <title>Sisters</title>
+    <title>Sisters - Bienvenue</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="nav-container">
             <a href="index.html" class="logo" aria-label="Retour à l'accueil">Sisters</a>
-            <ul class="nav-menu" role="menubar">
-                <li role="none"><a href="index.html" data-page="feel-good" class="nav-link active" role="menuitem" aria-current="page">Feel Good</a></li>
+            <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="pages/feel-good.html" data-page="feel-good" class="nav-link" role="menuitem">Feel Good</a></li>
                 <li role="none"><a href="pages/incroyable.html" data-page="incroyable" class="nav-link" role="menuitem">Tu es incroyable</a></li>
                 <li role="none"><a href="pages/predictions.html" data-page="predictions" class="nav-link" role="menuitem">Prédictions</a></li>
                 <li role="none"><a href="pages/photo.html" data-page="photo" class="nav-link" role="menuitem">Photo du jour</a></li>
@@ -25,16 +30,80 @@
     </nav>
 
     <main class="main-content" role="main">
-        <div class="container">
-            <h1 class="page-title">Bienvenue sur ton espace feel good</h1>
-            <p class="page-subtitle">Parce que tu mérites un petit boost de positivité</p>
-            <button id="boost-btn" class="action-btn" aria-label="Afficher un message positif">J'ai besoin d'un boost</button>
-            <div id="boost-message" class="message-box" style="display: none;" role="status" aria-live="polite" aria-atomic="true"></div>
+        <div class="container welcome-container">
+            <div class="welcome-message">
+                <h1 class="welcome-title">Bienvenue ma chère sœur</h1>
+                <p class="welcome-text">
+                    Ce site a été conçu spécialement pour toi, avec tout mon cœur, par ta sœur favorite.
+                </p>
+                <p class="welcome-text">
+                    J'ai créé cet espace pour te rappeler à quel point tu es incroyable et pour t'apporter un peu de joie chaque jour.
+                </p>
+                <p class="welcome-text">
+                    Explore les différentes pages et découvre des messages positifs, des raisons pour lesquelles tu es géniale, des prédictions rigolotes et de belles photos.
+                </p>
+            </div>
+
+            <div class="tutorial-section">
+                <h2 class="tutorial-title">Comment épingler ce site sur ton iPhone</h2>
+                <p class="tutorial-intro">Pour accéder rapidement à ce site comme une application :</p>
+                
+                <div class="tutorial-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Ouvre Safari</h3>
+                            <p>Ouvre cette page dans Safari (pas dans Chrome ou autre navigateur)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Appuie sur le bouton de partage</h3>
+                            <p>En bas de l'écran, appuie sur le bouton de partage <span class="icon-placeholder">□↑</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Choisis "Sur l'écran d'accueil"</h3>
+                            <p>Fais défiler les options et sélectionne "Sur l'écran d'accueil"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Personnalise le nom</h3>
+                            <p>Tu peux changer le nom si tu veux (par exemple "Sisters" ou "Feel Good")</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Ajoute à l'écran d'accueil</h3>
+                            <p>Appuie sur "Ajouter" en haut à droite</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tutorial-note">
+                    <p><strong>C'est fait !</strong> Tu auras maintenant une icône sur ton écran d'accueil pour accéder rapidement à ce site, comme une vraie application.</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2 class="cta-title">Prête à commencer ?</h2>
+                <p class="cta-text">Explore les différentes sections ci-dessus pour découvrir tout ce que j'ai préparé pour toi !</p>
+            </div>
         </div>
     </main>
 
     <script src="assets/js/utils.js"></script>
     <script src="assets/js/navigation.js"></script>
-    <script src="assets/js/feel-good.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
 </body>
 </html>

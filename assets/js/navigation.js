@@ -19,12 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Déterminer si c'est la page active
         let isActive = false;
         
-        // Page Feel Good (index.html ou racine)
-        if ((currentPage === 'index.html' || currentPage === '' || pathname.endsWith('/')) && linkPage === 'feel-good') {
-            isActive = true;
-        } 
-        // Page Feel Good (feel-good.html)
-        else if (currentPage === 'feel-good.html' && linkPage === 'feel-good') {
+        // Page Feel Good (feel-good.html uniquement maintenant)
+        if (currentPage === 'feel-good.html' && linkPage === 'feel-good') {
             isActive = true;
         } 
         // Page Incroyable
