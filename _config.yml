@@ -1,0 +1,4 @@
+# Configuration GitHub Pages
+# Ce fichier désactive Jekyll et permet de servir des fichiers statiques
+theme: null
+plugins: []
