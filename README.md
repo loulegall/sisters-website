@@ -65,6 +65,23 @@ sisters-website/
 └── server.js               # Serveur HTTP simple
 ```
 
+## 🌐 Déploiement sur GitHub Pages
+
+Le site est configuré pour fonctionner sur GitHub Pages dans le sous-dossier `/sisters-website`.
+
+### Configuration GitHub Pages
+
+1. Assurez-vous que votre dépôt GitHub contient tous les fichiers du projet
+2. Allez dans les **Settings** de votre dépôt GitHub
+3. Dans la section **Pages**, configurez :
+   - **Source** : `main` (ou `master`) branch
+   - **Folder** : `/sisters-website` (ou laissez `/root` si vous avez mis les fichiers à la racine)
+4. Votre site sera accessible à : `https://votre-username.github.io/sisters-website/`
+
+### Fichier `.nojekyll`
+
+Le fichier `.nojekyll` est présent pour désactiver Jekyll sur GitHub Pages, ce qui permet de servir les fichiers statiques correctement.
+
 ## ⚠️ Important
 
-**Ne pas ouvrir directement les fichiers HTML** (double-clic) car cela causera des erreurs CORS. Utilisez toujours un serveur HTTP local comme indiqué ci-dessus.
+**Note** : Les données sont maintenant intégrées directement dans les fichiers JavaScript, donc le site fonctionne aussi en ouvrant directement les fichiers HTML (double-clic). Cependant, pour un développement optimal, utilisez un serveur HTTP local.
